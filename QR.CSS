@@ -1,0 +1,98 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+  background: #043a8b;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  width: 400px;
+  padding: 25px 35px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+}
+.container h2{
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.container p{
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.container input{
+  width: 100%;
+  height: 45px;
+  outline: 0;
+  font-size: 16px;
+  padding: 0 15px;
+  margin: 10px 0 15px 0;
+  border-radius: 6px;
+  border: 1px solid lightgrey;
+}
+
+.container button{
+  width: 100%;
+  height: 45px;
+  font-size: 17px;
+  font-weight: 500;
+  color: white;
+  background: #494eea;
+  border: none;
+  outline: 0;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.container button:hover{
+  background-image: url('https://i.ibb.co/2N8Z5cK/bg-gradient-2.png');
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+}
+
+#imgBox{
+  width: 200px;
+  border-radius: 5px;
+  max-height: 0;
+  overflow: hidden;
+}
+
+#imgBox img{
+  width: 100%;
+  padding: 10px;
+}
+
+#imgBox.show-img{
+  max-height: 300px;
+  transition: max-height 0.3s ease;
+  margin: 10px auto;
+  border: 1px solid lightgrey;
+}
+
+.error{
+  animation: shake 0.3s linear 10;
+}
+
+@keyframes shake{
+  0%{ transform: translateX(0); }
+  25%{ transform: translateX(-5px); }
+  50%{ transform: translateX(5px); }
+  75%{ transform: translateX(-5px); }
+  100%{ transform: translateX(0); }
+}
+

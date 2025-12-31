@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>quote of the day</title>
+  <link rel="stylesheet" href="quote.css">
+</head>
+<body>
+  <main class="container">
+    <div class="quote-box">
+      <h1>Quote of the Day</h1>
+      <blockquote id="quote">Loading...</blockquote>
+      <cite id="author">—</cite>
+      <div class="controls">
+        <button id="newQuote">New Quote</button>
+        <button id="copy">Copy</button>
+        <button id="tweet">Tweet</button>
+      </div>
+    </div>
+  </main>
+   <script>
+    const quotes = [
+      { text: "The only limit to our realization of tomorrow is our doubts of today.", author: "Franklin D. Roosevelt" },
+      { text: "In the middle of every difficulty lies opportunity.", author: "Albert Einstein" },
+      { text: "What we think, we become.", author: "Buddha" },
+      { text: "Do not wait to strike till the iron is hot; but make it hot by striking.", author: "William Butler Yeats" },
+      { text: "Whether you think you can or you think you can’t, you’re right.", author: "Henry Ford" },
+      { text: "The best way to predict the future is to invent it.", author: "Alan Kay" }
+    ];
+
+    const quoteEl = document.getElementById('quote');
+    const authorEl = document.getElementById('author');
+    const newBtn = document.getElementById('newQuote');
+    const copyBtn = document.getElementById('copy');
+    const tweetBtn = document.getElementById('tweet');
+
+    function showRandomQuote() {
+      const q = quotes[Math.floor(Math.random() * quotes.length)];
+      quoteEl.textContent = q.text;
+      authorEl.textContent = q.author ? `— ${q.author}` : '';
+    }
+
+    newBtn.addEventListener('click', showRandomQuote);
+
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(`${quoteEl.textContent} ${authorEl.textContent}`);
+        copyBtn.textContent = 'Copied';
+        setTimeout(() => (copyBtn.textContent = 'Copy'), 1200);
+      } catch (e) {
+        alert('Copy failed: ' + e);
+      }
+    });
+
+    tweetBtn.addEventListener('click', () => {
+      const text = encodeURIComponent(`${quoteEl.textContent} ${authorEl.textContent}`);
+      const url = `https://twitter.com/intent/tweet?text=${text}`;
+      window.open(url, '_blank');
+    });
+
+    // initialize
+    showRandomQuote();
+    </script>
+</body>
+</html>
