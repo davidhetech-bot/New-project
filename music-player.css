@@ -1,0 +1,31 @@
+*{box-sizing:border-box;font-family:Segoe UI,Roboto,Arial, sans-serif}
+
+body{display:flex;align-items:center;justify-content:center;height:100vh;margin:0;background:linear-gradient(135deg,#0f172a,#021124);color:#e6eef8}
+
+.player
+{
+  width:360px;
+  background:rgba(255,255,255,0.04);
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 8px 24px rgba(2,6,23,0.6)
+}
+
+.art
+{
+  height:160px;
+  background:linear-gradient(135deg,#6ee7b7,#3b82f6);
+  border-radius:8px;
+  margin-bottom:12px;
+}
+.meta h2{margin:0;font-size:1.1rem}
+.meta p{margin:4px 0 12px;color:#bcd3ee;font-size:0.9rem}
+.controls{display:flex;justify-content:center;gap:12px;margin-bottom:10px}
+.controls button{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#e6eef8;padding:8px 12px;border-radius:8px;cursor:pointer}
+.progress{display:flex;align-items:center;gap:8px}
+.progress input[type=range]{flex:1}
+.extras{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.playlist{margin-top:12px;padding:0;list-style:none;max-height:140px;overflow:auto}
+.playlist li{padding:8px;border-radius:6px;cursor:pointer;color:#dff1ff}
+.playlist li.active{background:rgba(255,255,255,0.03)}
+@media (max-width:400px){.player{width:92vw}}
