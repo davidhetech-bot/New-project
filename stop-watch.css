@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+body {
+  background-color: #edeaff;
+  font-family: 'Roboto', sans-serif;
+}
+
+.stopwatch {
+  width: 90%;
+  max-width: 400px;
+  height: 200px;
+  background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("beach.jpg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 30px 0;
+  color: white;
+  margin: 200px auto 0;
+  border-radius: 12px;
+}
+
+.stopwatch h1 {
+  font-size: 48px;
+  margin: 20px 0;
+  font-weight: 300;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.button img {
+  width: 55px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.button img:nth-child(2) {
+  width: 65px;
+}
