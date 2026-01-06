@@ -103,3 +103,7 @@ nav .circle{
   background: #f53192;
   color: #fff;
 }
+
+.controls div:hover{
+  transform: translateY(-6px);
+}
