@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation app</title>
+    <link rel="stylesheet" href="validation.css">
+   <script src="https://kit.fontawesome.com/b2526fc861.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <form>
+      <i class="fas fa-paper-plane"></i>
+
+      <div class="input-group">
+        <label for="full name">Full Name</label>
+        <input type="text" placeholder="Username" id="contact-name" onkeyup="validateName()">
+        <span id="name-error"></span>
+      </div>
+
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" placeholder="Email" id="contact-email" onkeyup="validateEmail()">
+        <span id="email-error"></span>
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="contact-password" onkeyup="validatePassword()">
+        <span id="password-error"></span>
+      </div>
+
+      <div class="input-group">
+        <label for="confirm password">Confirm Password</label>
+        <input type="password" placeholder="Confirm Password" id="contact-confirm-password" onkeyup="validateConfirmPassword()"> 
+        <span id="confirm-password-error"></span>
+      </div>
+
+      <div class="input-group">
+        <label for="phone number">Phone Number</label>
+        <input type="tel" placeholder="123 456 7890" id="contact-phone" onkeyup="validatePhone()">
+        <span id="phone-error"></span>
+      </div>
+
+      <div class="input-group">
+        <label for="message">Your Message</label>
+        <textarea rows="4" placeholder="Your Message" id="contact-message" onkeyup="validateMessage()"></textarea>
+        <span id="message-error"></span>
+      </div>
+
+      <button type="button" onclick="return validateForm()">Submit</button>
+      <span id="success-error"></span>
+    </form>
+  </div>
+  <script src="validation.js"></script>
+</body>
+</html>
